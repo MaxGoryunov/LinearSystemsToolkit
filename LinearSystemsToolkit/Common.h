@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stdio.h>
+
 #define SafeMalloc(size) safeMalloc(size, __LINE__)
 
 /**
@@ -26,4 +28,4 @@ void* notNull(void* ptr, int line);
 * 
 * @return created pointer
 */
-void* safeMalloc(int size, int line);
+void* safeMalloc(size_t size, int line);
