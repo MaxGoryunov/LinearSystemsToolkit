@@ -9,3 +9,9 @@
 
 [![Hits-of-Code](https://hitsofcode.com/github/MaxGoryunov/LinearSystemsToolkit)](https://hitsofcode.com/github/MaxGoryunov/LinearSystemsToolkit/view)
 ![Lines-of-Code](https://tokei.rs/b1/github/MaxGoryunov/LinearSystemsToolkit?branch=master)
+
+**LinearSystemsToolkit** is a library for solving systems of linear equations
+ or SLE for short. It includes methods for matrix factorization and iterative
+ methods like Preconditioned Conjugate Gradients method(PCG).
+
+ 
