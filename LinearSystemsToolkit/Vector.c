@@ -50,3 +50,11 @@ Vector* linspace(double start, double end, int n) {
 	}
 	return x;
 }
+
+double scalarMultiplication(Vector* row, Vector* col) {
+	double sum = 0;
+	for (int i = 0; i < row->n; ++i) {
+		sum += row->data[i] * col->data[i];
+	}
+	return sum;
+}
