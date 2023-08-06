@@ -78,3 +78,16 @@ Vector* linspace(double start, double end, int n);
 * @return scalar multiplication
 */
 double scalarMultiplication(Vector* row, Vector* col);
+
+/**
+* @brief check if two vectors are equal
+* 
+* Equality is decided based on vectors' data. If all members are equal then
+* vectors are equal as well.
+* 
+* @param left one vector for comparison
+* @param right other vector for comparison
+* 
+* @return 1 if vectors are equal; 0 if vectors are not equal
+*/
+char vectorEqual(Vector* left, Vector* right);
