@@ -1,17 +1,36 @@
-<img src="./logo/LST.png" height="100px"/>
+<img src="./logo/LST.png" height="80px"/>
 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
 
 [![PDD status](https://www.0pdd.com/svg?name=MaxGoryunov/LinearSystemsToolkit)](https://www.0pdd.com/p?name=MaxGoryunov/LinearSystemsToolkit)
+[![codecov](https://codecov.io/gh/MaxGoryunov/LinearSystemsToolkit/branch/master/graph/badge.svg?token=fEHOo3uRp6)](https://codecov.io/gh/MaxGoryunov/LinearSystemsToolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/MaxGoryunov/LinearSystemsToolkit/blob/master/LICENSE)
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2db6f6abce1441629ba53c3157ad3ea7)](https://app.codacy.com/gh/MaxGoryunov/LinearSystemsToolkit/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/maxgoryunov/linearsystemstoolkit/badge)](https://www.codefactor.io/repository/github/maxgoryunov/linearsystemstoolkit)
-
 [![Hits-of-Code](https://hitsofcode.com/github/MaxGoryunov/LinearSystemsToolkit)](https://hitsofcode.com/github/MaxGoryunov/LinearSystemsToolkit/view)
-![Lines-of-Code](https://tokei.rs/b1/github/MaxGoryunov/LinearSystemsToolkit?branch=master)
+<!---![Lines-of-Code](https://tokei.rs/b1/github/MaxGoryunov/LinearSystemsToolkit?branch=master)--->
 
 **LinearSystemsToolkit** is a library for solving systems of linear equations
  or SLE for short. It includes methods for matrix factorization and iterative
  methods like Preconditioned Conjugate Gradients method(PCG).
 
- 
+## How to use it
+
+### Visual Studio setup
+
+Clone this repository into some folder, for example, `LST`:
+
+```git
+git clone https://github.com/MaxGoryunov/LinearSystemsToolkit.git
+```
+
+Then in your Visual Studio project's properties in `All configurations` > 
+`C/C++` > `General` > `Additional Include Directories` add
+`*path_to_LST/*LST/LinearSystemsToolkit` folder.
+
+After that in `All configurations` > `Linker` > `General` > 
+`Additional Library Directories` add `*path_to_LST/*LST` folder.
+
+If you have any questions, ask them at 
+[Discussions](https://github.com/MaxGoryunov/LinearSystemsToolkit/discussions).
