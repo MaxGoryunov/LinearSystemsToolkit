@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Compile calculator
-        run: gcc -fprofile-arcs -ftest-coverage -O0 -o VectorTest LinearSystemsToolkit/VectorTest.c LinearSystemsToolkit/Vector.c
+        run: gcc -fprofile-arcs -ftest-coverage -O0 -o VectorTest *.c
       - name: Run tests
         run: ./VectorTest
       - name: Upload coverage to Codecov
