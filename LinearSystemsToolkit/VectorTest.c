@@ -21,6 +21,13 @@ void vectorAllTests() {
 	sumsTwoVectors();
 }
 
+/**
+* @todo #1:45m/DEV The issue does not specify the required code coverage for
+*  this feature, this is why I decided that it is enough to just create
+*  functions listed in the issue. It is important to add some tests to check
+*  that the remaining functions also work as intended.
+*/
+
 int main() {
 	vectorAllTests();
 }
