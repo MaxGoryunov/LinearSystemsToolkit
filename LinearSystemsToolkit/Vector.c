@@ -60,18 +60,17 @@ double scalarMultiplication(Vector* row, Vector* col) {
 	return sum;
 }
 
-char vectorEqual(Vector* left, Vector* right) {
+char vectorDataEqual(Vector* left, Vector* right) {
 	char equal = 1;
-	if (left->n != right->n) {
-		equal = 0;
-	}
-	else {
-		for (int i = 0; i < left->n; ++i) {
-			if (left->data[i] != right->data[i]) {
-				equal = 0;
-				break;
-			}
+	for (int i = 0; i < left->n; ++i) {
+		if (left->data[i] != right->data[i]) {
+			equal = 0;
+			break;
 		}
 	}
 	return equal;
+}
+
+char vectorEqual(Vector* left, Vector* right) {
+	return (left->n == right->n) && vectorDataEqual(left, right);
 }
