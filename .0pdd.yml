@@ -1,0 +1,10 @@
+errors:
+  - 280603max@gmail.com
+alerts:
+  suppress:
+    - on-found-puzzle
+    - on-lost-puzzle
+    - on-scope
+tags:
+  - bug
+  - pdd
