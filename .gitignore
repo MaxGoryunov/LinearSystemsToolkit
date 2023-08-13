@@ -1,3 +1,7 @@
 .vs/
 *.sln
 *.vcxproj*
+*.gcno
+*.gcda
+*.gcov
+*.exe
