@@ -1,0 +1,17 @@
+name: Coverage
+on: [push, pull_request]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Compile calculator
+        run: gcc -fprofile-arcs -ftest-coverage -O0 -o VectorTest LinearSystemsToolkit/*.c -lm
+      - name: Run tests
+        run: ./VectorTest
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          gcov: true
+          gcov_include: LinearSystemsToolkit/Vector.c
