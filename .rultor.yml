@@ -1,0 +1,15 @@
+architect:
+  - MaxGoryunov
+install:
+  - "sudo apt-get update"
+  - "sudo apt-get install -y build-essential"
+merge:
+  script:
+    - "gcc --version"
+# @todo #8:30m/DEV Current merge script is just a stub version check which
+#  simply confirms the script is working. It would be better to actually
+#  execute all tests and maybe even style checks on this stage.
+
+# @todo #8:45m/DEV There is no release script. Release script can optionally
+#  build the project and add .lib files to root directory so that users do not
+#  have to recompile the project themselves.
