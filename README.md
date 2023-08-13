@@ -34,3 +34,60 @@ After that in `All configurations` > `Linker` > `General` >
 
 If you have any questions, ask them at 
 [Discussions](https://github.com/MaxGoryunov/LinearSystemsToolkit/discussions).
+
+## Vector operations
+
+To add two vectors:
+
+```c
+Vector* left  = vectorCreate(3); // {1, 2, 3}
+Vector* right = vectorCreate(3); // {4, 5, 6}
+Vector* sum = vectorSum(left, right); // {5, 7, 9}
+```
+
+To subtract a vector from another vector:
+
+```c
+Vector* left  = vectorCreate(3); // {7, 8, 9}
+Vector* right = vectorCreate(3); // {4, 5, 6}
+Vector* diff = vectorDiff(left, right); // {3, 3, 3}
+```
+
+To calculate vector's second norm:
+
+```c
+Vector* vec = vectorCreate(3); // {3, 4, 12}
+double norm = secondNorm(vec); // norm == 13
+```
+
+To scale a vector by some factor:
+
+```c
+Vector* vec    = vectorCreate(3); // {3, 4, 5}
+Vector* scaled = vectorScale(vec, 3); // {9, 12, 15}
+```
+
+To create a linearly spaced vector:
+
+```c
+Vector* points = linspace(0, 1, 5); // {0, 0.25, 0.5, 0.75, 1.0}
+```
+
+To multiply two vectors:
+
+```c
+Vector* row = vectorCreate(3); // {1, 2, 3}
+Vector* col = vectorCreate(3); // {4, 5, 6}
+double mult = scalarMultiplication(row, col); // 1*4 + 2*5 + 3*6 == 32
+```
+
+To check for vector equality:
+
+```c
+Vector* left  = vectorCreate(3); // {1, 2, 3}
+Vector* right = vectorCreate(3); // {1, 2, 3}
+Vector* other = vectorCreate(3); // {4, 5, 6}
+assert(1 == vectorEqual(left, right));
+assert(0 == vectorEqual(left, other));
+```
+
