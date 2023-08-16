@@ -91,3 +91,18 @@ assert(1 == vectorEqual(left, right));
 assert(0 == vectorEqual(left, other));
 ```
 
+## How to contribute
+
+[Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo),
+then create a folder for it and install [GCC](https://gcc.gnu.org/install/).
+After it run
+
+```bash
+gcc -fprofile-arcs -ftest-coverage -O0 -o AllTest LinearSystemsToolkit/*.c -lm
+./AllTest
+```
+
+This script will run all tests, they are not supposed to fail. Commit changes,
+open a [Pull Request](https://github.com/MaxGoryunov/saving-iterator/pulls).
+Your Pull Request will be reviewed and eventually accepted if it does not fail
+our build pipeline.
