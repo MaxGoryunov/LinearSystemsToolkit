@@ -39,6 +39,21 @@ void calculatesDiffOfTwoVectors() {
 	assert(1 == vectorEqual(vectorDiff(left, right), diff));
 }
 
+/**
+ * secondNorm calculates vector's second norm.
+*/
+void calculatesSecondNorm() {
+	Vector* vec = vectorCreate(3);
+	vec->data[0] = 3;
+	vec->data[1] = 4;
+	vec->data[2] = 12;
+	assert(13 == secondNorm(vec));
+}
+
+/**
+ * vectorScale scales given vector by some factor.
+*/
+
 
 void vectorAllTests() {
 	sumsTwoVectors();
