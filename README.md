@@ -8,6 +8,7 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2db6f6abce1441629ba53c3157ad3ea7)](https://app.codacy.com/gh/MaxGoryunov/LinearSystemsToolkit/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/maxgoryunov/linearsystemstoolkit/badge)](https://www.codefactor.io/repository/github/maxgoryunov/linearsystemstoolkit)
+[![codebeat badge](https://codebeat.co/badges/7d1fb029-8b83-4784-b760-b25f068d80bd)](https://codebeat.co/projects/github-com-maxgoryunov-linearsystemstoolkit-master)
 [![Hits-of-Code](https://hitsofcode.com/github/MaxGoryunov/LinearSystemsToolkit)](https://hitsofcode.com/github/MaxGoryunov/LinearSystemsToolkit/view)
 <!---![Lines-of-Code](https://tokei.rs/b1/github/MaxGoryunov/LinearSystemsToolkit?branch=master)--->
 
@@ -90,6 +91,11 @@ Vector* other = vectorCreate(3); // {4, 5, 6}
 assert(1 == vectorEqual(left, right));
 assert(0 == vectorEqual(left, other));
 ```
+
+<!--
+@todo #2:30m/DEV Examples for other functions working with matrices, for
+ example, also have to be added.
+-->
 
 ## How to contribute
 
