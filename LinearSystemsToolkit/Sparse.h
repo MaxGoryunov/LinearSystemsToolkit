@@ -136,7 +136,7 @@ Sparse* sparseMultiply(Sparse* left, Sparse* right);
 /**
  * @brief Creates a normalized orthogonal matrix from a given vector seed.
  * 
- * Orthogonal matrix is calcuated according to the formula:
+ * Orthogonal matrix is calculated according to the formula:
  * Q = I - 2 * w * w' / (w' * w), where
  * I is an identity matrix,
  * w is a given seed - vertical vector
