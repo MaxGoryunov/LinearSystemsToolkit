@@ -43,7 +43,7 @@ void calculatesDiffOfTwoVectors() {
  * secondNorm calculates vector's second norm.
 */
 void calculatesSecondNorm() {
-	Vector* vec = vectorCreate(3);
+	Vector* vec  = vectorCreate(3);
 	vec->data[0] = 3;
 	vec->data[1] = 4;
 	vec->data[2] = 12;
@@ -53,7 +53,18 @@ void calculatesSecondNorm() {
 /**
  * vectorScale scales given vector by some factor.
 */
-
+void scalesGivenVectorBySomeFactor() {
+	int size     = 3;
+	Vector* vec  = vectorCreate(size);
+	vec->data[0] = 1;
+	vec->data[1] = 2;
+	vec->data[2] = 3;
+	Vector* res  = vectorCreate(size);
+	res->data[0] = 3;
+	res->data[1] = 6;
+	res->data[2] = 9;
+	assert(1 == vectorEqual(vectorScale(vec, 3), res));
+}
 
 void vectorAllTests() {
 	sumsTwoVectors();
