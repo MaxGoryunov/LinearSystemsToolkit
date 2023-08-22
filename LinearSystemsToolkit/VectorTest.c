@@ -66,6 +66,17 @@ void scalesGivenVectorBySomeFactor() {
 	assert(1 == vectorEqual(vectorScale(vec, 3), res));
 }
 
+/**
+ * linspace creates a linearly spaced vector.
+*/
+void linspaceCreatesLinearlySpacedVector() {
+	Vector* vec = vectorCreate(3);
+	vec->data[0] = 0;
+	vec->data[1] = 0.5;
+	vec->data[2] = 1;
+	assert(1 == vectorEqual(vec, linspace(0, 1, 3)));
+}
+
 void vectorAllTests() {
 	sumsTwoVectors();
 }
