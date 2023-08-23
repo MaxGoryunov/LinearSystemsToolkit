@@ -158,3 +158,8 @@ Sparse* sparseDiff(Sparse* left, Sparse* right) {
  *  implementation for sparseSum should be done in a separate PR.
 */
 
+/**
+ * @todo #13:60m/DEV All remaining functions from issue #13 starting from
+ *  sparseScale and on are supposed to be implemented in a separate PR because
+ *  this PR is already large enough.
+*/
