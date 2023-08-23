@@ -27,3 +27,25 @@ Sparse *sparseIdentity(int n)
 	}
 	return S;
 }
+
+void sparsePrint(Sparse *A) {
+    for (int i = 0; i < A->n; ++i) {
+		Element* cur = A->rows[i];
+		for (int j = 0; j < A->n; ++j) {
+			if (cur != NULL && cur->col == j) {
+				printf("%.15f ", cur->data);
+				cur = cur->next;
+			}
+			else {
+				printf("%.15f ", 0);
+			}
+		}
+		printf("\n");
+	}
+}
+/**
+ * @todo #13:30m/DEV There must be a possibility to specify printed numbers' 
+ *  format. Function 'sparsePrint' always prints numbers with 15-digit
+ *  precision.
+*/
+
