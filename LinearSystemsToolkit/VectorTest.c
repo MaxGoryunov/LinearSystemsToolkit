@@ -81,17 +81,56 @@ void linspaceCreatesLinearlySpacedVector() {
  * scalarMultiplication correctly multiplies two vectors.
 */
 void scalarMultiplicationCorrectlyMultipliesTwoVectors() {
-	int size    = 2;
-	Vector* row = vectorCreate(size);
+	int size     = 2;
+	Vector* row  = vectorCreate(size);
 	row->data[0] = 1;
 	row->data[1] = 2;
-	Vector* col = vectorCreate(size);
+	Vector* col  = vectorCreate(size);
 	col->data[0] = 3;
 	col->data[0] = 4;
 	assert(1 * 3 + 2 * 4 == scalarMultiplication(row, col));
 }
 
+/**
+ * vectorEqual returns true for equal vectors.
+*/
+void vectorEqualReturnsTrueForEqualVectors() {
+	int size       = 2;
+	Vector* left   = vectorCreate(size);
+	left->data[0]  = 2;
+	left->data[1]  = 3;
+	Vector* right  = vectorCreate(size);
+	right->data[0] = 2;
+	right->data[1] = 3;
+	assert(1 == vectorEqual(left, right));
+}
 
+/**
+ * vectorEqual returns false for vectors which are not equal.
+*/
+void vectorEqualReturnsFalseForUnequalVectors() {
+	int size       = 2;
+	Vector* left   = vectorCreate(size);
+	left->data[0]  = 1;
+	left->data[1]  = 2;
+	Vector* right  = vectorCreate(size);
+	right->data[0] = 1;
+	right->data[1] = 3;
+	assert(0 == vectorEqual(left, right));
+}
+
+/**
+ * vectorEqual returns true for pointers to the same vector.
+*/
+void vectorEqualReturnsTrueForPointersToTheSameVector() {
+	int size      = 3;
+	Vector* left  = vectorCreate(size);
+	left->data[0] = 2;
+	left->data[1] = 3;
+	left->data[2] = 4;
+	Vector* right = left;
+	assert(1 == vectorEqual(left, right));
+}
 
 void vectorAllTests() {
 	sumsTwoVectors();
