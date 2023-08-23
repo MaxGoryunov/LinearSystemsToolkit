@@ -77,6 +77,22 @@ void linspaceCreatesLinearlySpacedVector() {
 	assert(1 == vectorEqual(vec, linspace(0, 1, 3)));
 }
 
+/**
+ * scalarMultiplication correctly multiplies two vectors.
+*/
+void scalarMultiplicationCorrectlyMultipliesTwoVectors() {
+	int size    = 2;
+	Vector* row = vectorCreate(size);
+	row->data[0] = 1;
+	row->data[1] = 2;
+	Vector* col = vectorCreate(size);
+	col->data[0] = 3;
+	col->data[0] = 4;
+	assert(1 * 3 + 2 * 4 == scalarMultiplication(row, col));
+}
+
+
+
 void vectorAllTests() {
 	sumsTwoVectors();
 }
