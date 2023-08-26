@@ -15,12 +15,16 @@ void sumsTwoVectors() {
 		sum->data[i]   = i * 3;
 	}
 	assert(1 == vectorEqual(vectorSum(left, right), sum));
+	vectorDestroy(left);
+	vectorDestroy(right);
+	vectorDestroy(sum);
 }
+
 /**
- * @todo #12:30m/DEV There is no operation for freeing the memory when the
- *  vector is no longer needed. There must be a function which takes a 
- *  vector and frees memory reserved for it. This behaviour in tests must
- *  be checked by special methods which detect memory leakages.
+ * @todo #17:30m/DEV There is a way to check C programs for memory leakages.
+ *  After calling some functions at the start of 'main', all leakages which
+ *  remain after the program was finished will be reported. It will be a good
+ *  practice to include this technology in tests.
 */
 
 /**
@@ -37,6 +41,9 @@ void calculatesDiffOfTwoVectors() {
 		diff->data[i]  = 3;
 	}
 	assert(1 == vectorEqual(vectorDiff(left, right), diff));
+	vectorDestroy(left);
+	vectorDestroy(right);
+	vectorDestroy(diff);
 }
 
 /**
@@ -48,6 +55,7 @@ void calculatesSecondNorm() {
 	vec->data[1] = 4;
 	vec->data[2] = 12;
 	assert(13 == secondNorm(vec));
+	vectorDestroy(vec);
 }
 
 /**
@@ -64,6 +72,8 @@ void scalesGivenVectorBySomeFactor() {
 	res->data[1] = 6;
 	res->data[2] = 9;
 	assert(1 == vectorEqual(vectorScale(vec, 3), res));
+	vectorDestroy(vec);
+	vectorDestroy(res);
 }
 
 /**
@@ -75,6 +85,7 @@ void linspaceCreatesLinearlySpacedVector() {
 	vec->data[1] = 0.5;
 	vec->data[2] = 1;
 	assert(1 == vectorEqual(vec, linspace(0, 1, 3)));
+	vectorDestroy(vec);
 }
 
 /**
@@ -89,6 +100,8 @@ void scalarMultiplicationCorrectlyMultipliesTwoVectors() {
 	col->data[0] = 3;
 	col->data[0] = 4;
 	assert(1 * 3 + 2 * 4 == scalarMultiplication(row, col));
+	vectorDestroy(row);
+	vectorDestroy(col);
 }
 
 /**
@@ -103,6 +116,8 @@ void vectorEqualReturnsTrueForEqualVectors() {
 	right->data[0] = 2;
 	right->data[1] = 3;
 	assert(1 == vectorEqual(left, right));
+	vectorDestroy(left);
+	vectorDestroy(right);
 }
 
 /**
@@ -117,6 +132,8 @@ void vectorEqualReturnsFalseForUnequalVectors() {
 	right->data[0] = 1;
 	right->data[1] = 3;
 	assert(0 == vectorEqual(left, right));
+	vectorDestroy(left);
+	vectorDestroy(right);
 }
 
 /**
@@ -130,6 +147,8 @@ void vectorEqualReturnsTrueForPointersToTheSameVector() {
 	left->data[2] = 4;
 	Vector* right = left;
 	assert(1 == vectorEqual(left, right));
+	vectorDestroy(left);
+	vectorDestroy(right);
 }
 
 void vectorAllTests() {
