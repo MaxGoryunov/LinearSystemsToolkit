@@ -137,11 +137,6 @@ void vectorAllTests() {
 }
 
 /**
- * @todo #12:45min/DEV Tests for Common.c were not written in this PR because
- *  the issue only mentions Vector tests. However, functionality in Common.c
- *  also needs to be covered by tests to ensure correctness.
-*/
-/**
  * @todo #12:30m/DEV There will probably be other test files, not only Vector
  *  tests. Vector tests have to be reorganized so that all tests can be run
  *  using one command, meaning that all tests are built as a single app.
