@@ -1,4 +1,5 @@
 #include <assert.h>
+#include "VectorTest.h"
 #include "Vector.h"
 
 /**
@@ -146,6 +147,3 @@ void vectorAllTests() {
  *  tests. Vector tests have to be reorganized so that all tests can be run
  *  using one command, meaning that all tests are built as a single app.
 */
-int main() {
-	vectorAllTests();
-}
