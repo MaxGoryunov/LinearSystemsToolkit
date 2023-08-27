@@ -34,13 +34,16 @@ void sparseDestroy(Sparse* A) {
     free(A);
 }
 
-Sparse *sparseIdentity(int n)
-{
+Sparse* sparseIdentity(int n) {
     Sparse* S = sparseCreate(n);
 	for (int i = 0; i < n; ++i) {
 		S->rows[i] = elementCreate(1, i);
 	}
 	return S;
+}
+
+Sparse* sparseFromFile(char *name, int n) {
+    return NULL;
 }
 
 void sparsePrint(Sparse *A) {
@@ -58,11 +61,15 @@ void sparsePrint(Sparse *A) {
 		printf("\n");
 	}
 }
+Sparse* sparseSum(Sparse *left, Sparse *right) {
+    return NULL;
+}
+
 /**
- * @todo #13:30m/DEV There must be a possibility to specify printed numbers' 
+ * @todo #13:30m/DEV There must be a possibility to specify printed numbers'
  *  format. Function 'sparsePrint' always prints numbers with 15-digit
  *  precision.
-*/
+ */
 
 Element* copiedRow(Element* row) {
 	if (row == NULL) {
@@ -151,6 +158,25 @@ Sparse* sparseDiff(Sparse* left, Sparse* right) {
 	return R;
 }
 
+Sparse* sparseScale(Sparse *A, double num) {
+    return NULL;
+}
+
+Vector* sparseMultiplyByVector(Sparse* A, Vector* b) {
+	return NULL;
+}
+
+Sparse* sparseMultiply(Sparse* left, Sparse* right) {
+	return NULL;
+}
+
+Sparse* sparseOrthogonalFromSeed(Vector* seed) {
+	return NULL;
+}
+
+Sparse* sparseDiagonalFromVector(Vector* diag) {
+	return NULL;
+}
 /**
  * @todo #13:30m/DEV sparseSum is supposed to work similar to sparseDiff, but
  *  with addition instead of subtraction. It is outside of the goals of this
