@@ -142,6 +142,8 @@ Sparse* D    = sparseDiagonalFromVector(diag);
 //  0, 0, 3}
 ```
 
+All aforementioned operations are also accessible for regular matrices in `Matrix.h` module.
+
 ## How to contribute
 
 [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo),
