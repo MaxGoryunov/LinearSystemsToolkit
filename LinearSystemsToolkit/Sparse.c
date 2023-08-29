@@ -55,7 +55,7 @@ void sparsePrint(Sparse *A) {
 				cur = cur->next;
 			}
 			else {
-				printf("%.15f ", 0);
+				printf("%.15f ", (double)0);
 			}
 		}
 		printf("\n");
@@ -87,10 +87,8 @@ Element* copiedRow(Element* row) {
 	return head;
 }
 
-Sparse* subtractedRows(Element* left, Element* right) {
+Element* subtractedHead(Element* first, Element* second) {
 	Element* head = NULL;
-	Element* first = left;
-	Element* second = right;
 	if (first == NULL && second == NULL) {
 		return head;
 	}
@@ -116,6 +114,20 @@ Sparse* subtractedRows(Element* left, Element* right) {
 		first = first->next;
 		second = second->next;
 	}
+	return head;
+}
+
+Element* firstNonNull(Element* first, Element* second) {
+	if (first != NULL) {
+		return first;
+	}
+	return second;
+}
+
+Sparse* subtractedRows(Element* left, Element* right) {
+	Element* first = left;
+	Element* second = right;
+	Element* head = subtractedHead(first, second);
 	Element* tail = head;
 	while (first != NULL && second != NULL) {
 		if (first->col < second->col) {
@@ -141,12 +153,7 @@ Sparse* subtractedRows(Element* left, Element* right) {
 			head = tail;
 		}
 	}
-	if (first != NULL) {
-		tail->next = first;
-	}
-	else {
-		tail->next = second;
-	}
+	tail->next = firstNonNull(first, second);
 	return head;
 }
 
