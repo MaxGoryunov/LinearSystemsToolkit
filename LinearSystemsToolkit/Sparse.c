@@ -87,32 +87,32 @@ Element* copiedRow(Element* row) {
 	return head;
 }
 
-Element* subtractedHead(Element* first, Element* second) {
+Element* subtractedHead(Element** first, Element** second) {
 	Element* head = NULL;
-	if (first == NULL && second == NULL) {
+	if (*first == NULL && *second == NULL) {
 		return head;
 	}
-	else if (first == NULL && second != NULL) {
-		return copiedRow(second);
+	else if (*first == NULL && *second != NULL) {
+		return copiedRow(*second);
 	}
-	else if (first != NULL && second == NULL) {
-		return copiedRow(first);
+	else if (*first != NULL && *second == NULL) {
+		return copiedRow(*first);
 	}
-	if (first->col < second->col) {
-		head = elementCreate(first->data, first->col);
-		first = first->next;
+	if ((*first)->col < (*second)->col) {
+		head = elementCreate((*first)->data, (*first)->col);
+		*first = (*first)->next;
 	}
-	else if (second->col < first->col) {
-		head = elementCreate(second->data, second->col);
-		second = second->next;
+	else if ((*second)->col < (*first)->col) {
+		head = elementCreate((*second)->data, (*second)->col);
+		*second = (*second)->next;
 	}
 	else {
 		head = elementCreate(
-			first->data - second->data,
-			first->col
+			(*first)->data - (*second)->data,
+			(*first)->col
 		);
-		first = first->next;
-		second = second->next;
+		(*first) = (*first)->next;
+		(*second) = (*second)->next;
 	}
 	return head;
 }
