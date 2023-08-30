@@ -144,6 +144,12 @@ Sparse* D    = sparseDiagonalFromVector(diag);
 
 All aforementioned operations are also accessible for regular matrices in `Matrix.h` module.
 
+<!---
+@todo #15:30m/DEV Another section which needs to be added is the one related
+ to solution of linear systems. This section must include description
+ of gaussian method and matrix factorizations.
+--->
+
 ## How to contribute
 
 [Fork this repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo),
