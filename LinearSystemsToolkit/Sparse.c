@@ -46,17 +46,20 @@ Sparse* sparseFromFile(char *name, int n) {
     return NULL;
 }
 
+void sparsePrintElementAtCol(Element** e, int col) {
+	if (*e != NULL && (*e)->col == col) {
+		printf("%.15f ", (*e)->data);
+		*e = (*e)->next;
+	} else {
+		printf("%.15f ", (double)0);
+	}
+}
+
 void sparsePrint(Sparse *A) {
     for (int i = 0; i < A->n; ++i) {
 		Element* cur = A->rows[i];
 		for (int j = 0; j < A->n; ++j) {
-			if (cur != NULL && cur->col == j) {
-				printf("%.15f ", cur->data);
-				cur = cur->next;
-			}
-			else {
-				printf("%.15f ", (double)0);
-			}
+			sparsePrintElementAtCol(&cur, j);
 		}
 		printf("\n");
 	}
@@ -127,7 +130,7 @@ Element* firstNonNull(Element* first, Element* second) {
 Sparse* subtractedRows(Element* left, Element* right) {
 	Element* first = left;
 	Element* second = right;
-	Element* head = subtractedHead(first, second);
+	Element* head = subtractedHead(&first, &second);
 	Element* tail = head;
 	while (first != NULL && second != NULL) {
 		if (first->col < second->col) {
