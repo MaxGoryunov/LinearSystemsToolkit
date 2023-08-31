@@ -5,3 +5,6 @@
 *.gcda
 *.gcov
 *.exe
+.vscode
+Debug
+*.tlog

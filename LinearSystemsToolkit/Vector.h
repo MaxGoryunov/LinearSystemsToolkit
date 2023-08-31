@@ -20,6 +20,13 @@ typedef struct Vector {
 Vector* vectorCreate(int n);
 
 /**
+ * @brief removes a vector from memory.
+ * 
+ * @param v vector to be freed
+*/
+void vectorDestroy(Vector* v);
+
+/**
 * @brief sum of two vectors
 * 
 * @param left left vector sum operand

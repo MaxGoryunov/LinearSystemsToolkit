@@ -1,4 +1,5 @@
 #include <math.h>
+#include <malloc.h>
 #include "Vector.h"
 #include "Common.h"
 
@@ -10,6 +11,11 @@ Vector* vectorCreate(int n) {
 		v->data[i] = 0;
 	}
 	return v;
+}
+
+void vectorDestroy(Vector* v) {
+	free(v->data);
+	free(v);
 }
 
 Vector* vectorSum(Vector* left, Vector* right) {

@@ -92,10 +92,63 @@ assert(1 == vectorEqual(left, right));
 assert(0 == vectorEqual(left, other));
 ```
 
-<!--
-@todo #2:30m/DEV Examples for other functions working with matrices, for
- example, also have to be added.
--->
+## Sparse matrix operations
+
+To read a sparse matrix from a file:
+
+```c
+Sparse* S = sparseFromFile("source.txt", 3); // a 3x3 matrix
+```
+
+To add or subtract two matrices:
+
+```c
+Sparse* A = sparseCreate(3); // a 3x3 matrix
+Sparse* B = sparseCreate(3); // a 3x3 matrix
+Sparse* S = sparseSum(A, B); // S == A + B
+Sparse* D = sparseDiff(A, B); // D == A - B
+```
+
+To scale a matrix by some factor:
+
+```c
+double scale = 3;
+Sparse* A    = sparseCreate(3);
+Sparse* B    = sparseScale(A, scale); // B == 3 * A
+```
+
+To multiply a matrix by a vector:
+
+```c
+Sparse* A = sparseCreate(3); // a 3x3 matrix
+Vector* x = vectorCreate(3); // a 3x1 vector
+Vector* b = sparseMultiplyByVector(A, x); // A * x == b
+```
+
+To create a normalized orthogonal matrix from a given vector seed:
+
+```c
+Vector* w = vectorCreate(3); // a 3x1 vector
+Sparse* Q = sparseOrthogonalFromSeed(w);
+```
+
+To create a diagonal matrix from a vector of given values:
+
+```c
+Vector* diag = vectorCreate(3); // {1, 2, 3}
+Sparse* D    = sparseDiagonalFromVector(diag);
+// {1, 0, 0;
+//  0, 2, 0;
+//  0, 0, 3}
+```
+
+All aforementioned operations are also accessible for regular matrices in `Matrix.h` module.
+
+<!---
+@todo #15:30m/DEV Another section which needs to be added is the one related
+ to solution of linear systems. This section must include description
+ of gaussian method and matrix factorizations.
+--->
 
 ## How to contribute
 
