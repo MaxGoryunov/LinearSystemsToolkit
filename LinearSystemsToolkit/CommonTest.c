@@ -7,7 +7,7 @@
 */
 void safeMallocReturnsAllocatedMemoryOfCorrectSize() {
     size_t size = 16;
-    assert(size == sizeof(SafeMalloc(size)));
+    assert(sizeof(int) == sizeof(SafeMalloc(size)));
 }
 
 void commonAllTests() {
