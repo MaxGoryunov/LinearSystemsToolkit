@@ -6,10 +6,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Compile calculator
-        run: gcc -fprofile-arcs -ftest-coverage -O0 -o VectorTest LinearSystemsToolkit/*.c -lm
+      - name: Compile tests
+        run: gcc -fprofile-arcs -ftest-coverage -O0 -o AllTest LinearSystemsToolkit/*.c -lm
       - name: Run tests
-        run: ./VectorTest
+        run: ./AllTest
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:

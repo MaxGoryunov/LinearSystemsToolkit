@@ -155,7 +155,3 @@ void vectorEqualReturnsTrueForPointersToTheSameVector() {
 void vectorAllTests() {
 	sumsTwoVectors();
 }
-
-int main() {
-	vectorAllTests();
-}
