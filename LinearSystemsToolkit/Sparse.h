@@ -25,6 +25,23 @@ typedef struct Sparse {
 } Sparse;
 
 /**
+ * @brief Creates a matrix element.
+ * 
+ * @param data value of the element
+ * @param col  column number
+ * 
+ * @return created matrix element
+*/
+Element* elementCreate(double data, int col);
+
+/**
+ * @brief Destroys a matrix element.
+ * 
+ * @param e element to be destroyed
+*/
+void elementDestroy(Element* e);
+
+/**
  * @brief Creates a sparse matrix.
  * 
  * @param n matrix size
