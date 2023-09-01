@@ -41,16 +41,16 @@ If you have any questions, ask them at
 To add two vectors:
 
 ```c
-Vector* left  = vectorCreate(3); // {1, 2, 3}
-Vector* right = vectorCreate(3); // {4, 5, 6}
+Vector* left  = vectorCreate(3);      // {1, 2, 3}
+Vector* right = vectorCreate(3);      // {4, 5, 6}
 Vector* sum = vectorSum(left, right); // {5, 7, 9}
 ```
 
 To subtract a vector from another vector:
 
 ```c
-Vector* left  = vectorCreate(3); // {7, 8, 9}
-Vector* right = vectorCreate(3); // {4, 5, 6}
+Vector* left  = vectorCreate(3);        // {7, 8, 9}
+Vector* right = vectorCreate(3);        // {4, 5, 6}
 Vector* diff = vectorDiff(left, right); // {3, 3, 3}
 ```
 
@@ -77,8 +77,8 @@ Vector* points = linspace(0, 1, 5); // {0, 0.25, 0.5, 0.75, 1.0}
 To multiply two vectors:
 
 ```c
-Vector* row = vectorCreate(3); // {1, 2, 3}
-Vector* col = vectorCreate(3); // {4, 5, 6}
+Vector* row = vectorCreate(3);                // {1, 2, 3}
+Vector* col = vectorCreate(3);                // {4, 5, 6}
 double mult = scalarMultiplication(row, col); // 1*4 + 2*5 + 3*6 == 32
 ```
 
@@ -103,9 +103,9 @@ Sparse* S = sparseFromFile("source.txt", 3); // a 3x3 matrix
 To add or subtract two matrices:
 
 ```c
-Sparse* A = sparseCreate(3); // a 3x3 matrix
-Sparse* B = sparseCreate(3); // a 3x3 matrix
-Sparse* S = sparseSum(A, B); // S == A + B
+Sparse* A = sparseCreate(3);  // a 3x3 matrix
+Sparse* B = sparseCreate(3);  // a 3x3 matrix
+Sparse* S = sparseSum(A, B);  // S == A + B
 Sparse* D = sparseDiff(A, B); // D == A - B
 ```
 
@@ -120,8 +120,8 @@ Sparse* B    = sparseScale(A, scale); // B == 3 * A
 To multiply a matrix by a vector:
 
 ```c
-Sparse* A = sparseCreate(3); // a 3x3 matrix
-Vector* x = vectorCreate(3); // a 3x1 vector
+Sparse* A = sparseCreate(3);              // a 3x3 matrix
+Vector* x = vectorCreate(3);              // a 3x1 vector
 Vector* b = sparseMultiplyByVector(A, x); // A * x == b
 ```
 
@@ -144,11 +144,32 @@ Sparse* D    = sparseDiagonalFromVector(diag);
 
 All aforementioned operations are also accessible for regular matrices in `Matrix.h` module.
 
-<!---
-@todo #15:30m/DEV Another section which needs to be added is the one related
- to solution of linear systems. This section must include description
- of gaussian method and matrix factorizations.
---->
+## Solving linear systems
+
+To solve a system using [Gaussian elimination](https://en.wikipedia.org/wiki/Gaussian_elimination):
+
+```c
+Matrix* A  = matrixCreate(3);               // a 3x3 matrix
+Vector* xt = vectorCreate(3);               // {1, 1, 1}
+Vector* b  = matrixMultiplyByVector(A, xt); // A * xt == b
+Vector* x  = solveGauss(A, b);              // x == xt
+```
+
+To perform [LU factorization](https://en.wikipedia.org/wiki/LU_decomposition):
+
+```c
+Matrix* A   = matrixCreate(3); // a 3x3 matrix
+Matrix** LU = matrixLU(A);     // L * U == A
+Matrix* L   = LU[0];
+Matrix* U   = LU[1];
+```
+
+To perform [Cholesky factorization](https://en.wikipedia.org/wiki/Cholesky_decomposition):
+
+```c
+Matrix* A = matrixCreate(3); // a 3x3 matrix
+Matrix* R = matrixChol(A);   // R' * R == A, R' is R transposed
+```
 
 ## How to contribute
 
