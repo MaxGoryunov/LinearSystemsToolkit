@@ -83,3 +83,17 @@ Matrix* matrixScale(Matrix* A, double num) {
 	}
 	return S;
 }
+
+int matrixEqual(Matrix* left, Matrix* right) {
+	if (left->n != right->n) {
+		return 0;
+	}
+	for (int i = 0; i < left->n; ++i) {
+		for (int j = 0; j < left->n; ++j) {
+			if (left->data[i][j] != right->data[i][j]) {
+				return 0;
+			}
+		}
+	}
+	return 1;
+}

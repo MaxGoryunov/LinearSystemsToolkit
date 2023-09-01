@@ -129,3 +129,13 @@ Matrix* matrixOrthogonal(Vector* seed);
  * @return A diagonal matrix.
 */
 Matrix* matrixDiagonal(Vector* diag);
+
+/**
+ * @brief Checks if two matrices are equal.
+ * 
+ * @param left  The left term.
+ * @param right The right term.
+ * 
+ * @return 1 if the two matrices are equal, 0 otherwise.
+*/
+int matrixEqual(Matrix* left, Matrix* right);
