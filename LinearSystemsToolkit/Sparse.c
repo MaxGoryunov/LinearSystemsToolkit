@@ -1,4 +1,5 @@
 #include <malloc.h>
+#include <stddef.h>
 #include "Sparse.h"
 #include "Common.h"
 
@@ -127,7 +128,7 @@ Element* firstNonNull(Element* first, Element* second) {
 	return second;
 }
 
-Sparse* subtractedRows(Element* left, Element* right) {
+Element* subtractedRows(Element* left, Element* right) {
 	Element* first = left;
 	Element* second = right;
 	Element* head = subtractedHead(&first, &second);
