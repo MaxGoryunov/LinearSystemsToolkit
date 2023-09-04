@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <assert.h>
 #include "SparseTest.h"
 #include "Sparse.h"
