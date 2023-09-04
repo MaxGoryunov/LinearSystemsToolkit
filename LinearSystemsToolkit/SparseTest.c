@@ -39,6 +39,11 @@ void sparseDiffComputesDifferenceBetweenTwoMatrices() {
     Sparse* A   = organiseSparseMatrix(size, diff);
     Sparse* B   = organiseSparseMatrix(size, 0);
     Sparse* C   = sparseDiff(A, B);
+    sparsePrint(A);
+    printf("----\n");
+    sparsePrint(B);
+    printf("----\n");
+    sparsePrint(C);
     for (int i = 0; i < size; ++i) {
         Element* cur = C->rows[i];
         while (cur != NULL) {
