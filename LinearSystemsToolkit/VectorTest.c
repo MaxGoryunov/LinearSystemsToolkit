@@ -155,9 +155,3 @@ void vectorEqualReturnsTrueForPointersToTheSameVector() {
 void vectorAllTests() {
 	sumsTwoVectors();
 }
-
-/**
- * @todo #12:45min/DEV Tests for Common.c were not written in this PR because
- *  the issue only mentions Vector tests. However, functionality in Common.c
- *  also needs to be covered by tests to ensure correctness.
-*/
