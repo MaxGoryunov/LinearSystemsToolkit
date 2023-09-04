@@ -53,4 +53,5 @@ void sparseDiffComputesDifferenceBetweenTwoMatrices() {
 
 void sparseAllTests() {
     sparseIdentityCreatesIdentityMatrix();
+    sparseDiffComputesDifferenceBetweenTwoMatrices();
 }
