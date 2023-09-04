@@ -21,7 +21,7 @@ Sparse* organiseSparseMatrix(int size, double offset) {
         Element* row = elementCreate(0, 0);
         Element* cur = row;
         for (int j = 0; j < size; ++j) {
-            cur->next = elementCreate(i + j + offset, 0);
+            cur->next = elementCreate(i + j + offset, j);
             cur = cur->next;
         }
         cur->next = NULL;
