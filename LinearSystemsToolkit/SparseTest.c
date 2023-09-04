@@ -15,6 +15,11 @@ void sparseIdentityCreatesIdentityMatrix() {
     sparseDestroy(I);
 }
 
+/**
+ * @todo #13:60m/DEV There is a bug with this method. It returns a matrix with
+ *  only zeroes inside. Instead it must be filled with values. Confirmation
+ *  of this is zeroes printed to console when tests are run.
+*/
 Sparse* organiseSparseMatrix(int size, double offset) {
     Sparse* A  = sparseCreate(size);
     for (int i = 0; i < size; ++i) {
